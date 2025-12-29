@@ -5,7 +5,7 @@ export default function Home() {
     return (
         <>
             <Header />
-            This is the Home Page
+            This is the Home Page From Home Page
         </>
     )
 }
