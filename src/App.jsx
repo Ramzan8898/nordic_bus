@@ -1,22 +1,20 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import './App.css';
 import MainLayout from "./layouts/Layout";
-import Page from "./pages/Page";
-
-function App() {
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Fleets from "./pages/Fleets";
+import Services from "./pages/Services";
+export default function App() {
   return (
-    <>
-      <Routes>
-        <Route element={<MainLayout />}>
-
-          <Route path="/" element={<Home />} />
-          <Route path="/*" element={<Page />} />
-
-        </Route>
-      </Routes>
-    </>
+    <Routes>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/fleets" element={<Fleets />} />
+        <Route path="/services" element={<Services />} />
+      </Route>
+    </Routes>
   );
 }
-
-export default App;

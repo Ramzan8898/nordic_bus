@@ -7,19 +7,12 @@ import { GET_SITE_LOGO } from "../graphql/logo";
 export default function Header() {
 
 	const {
-		data: menuData,
-		loading: menuLoading,
-		error: menuError,
-	} = useQuery(GET_MENU);
-
-	const {
 		data: logoData,
 		loading: logoLoading,
 		error: logoError,
 	} = useQuery(GET_SITE_LOGO);
 
-	if (menuLoading || logoLoading) return <div>Loading...</div>;
-	if (menuError) return <div>Menu error</div>;
+	if (logoLoading) return <div>Loading...</div>;
 	if (logoError) return <div>Logo error</div>;
 
 	return (
@@ -42,19 +35,56 @@ export default function Header() {
 
 					{/* MENU */}
 					<nav className="flex gap-8">
-						{menuData.menuItems.nodes.map((item) => (
-							<NavLink
-								key={item.id}
-								to={item.uri}
-								end
-								className={({ isActive }) =>
-									`
+						<NavLink
+							to="/"
+							end
+							className={({ isActive }) =>
+								`
                 relative font-medium transition-all duration-300 ${isActive ? "text-[#38BDF8] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#38BDF8]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
-								}
-							>
-								{item.label}
-							</NavLink>
-						))}
+							}
+						>
+							Home
+						</NavLink>
+						<NavLink
+							to="/fleets"
+							end
+							className={({ isActive }) =>
+								`
+                relative font-medium transition-all duration-300 ${isActive ? "text-[#38BDF8] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#38BDF8]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
+							}
+						>
+							Fleets
+						</NavLink>
+						<NavLink
+							to="/services"
+							end
+							className={({ isActive }) =>
+								`
+                relative font-medium transition-all duration-300 ${isActive ? "text-[#38BDF8] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#38BDF8]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
+							}
+						>
+							Services
+						</NavLink>
+						<NavLink
+							to="/about"
+							end
+							className={({ isActive }) =>
+								`
+                relative font-medium transition-all duration-300 ${isActive ? "text-[#38BDF8] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#38BDF8]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
+							}
+						>
+							About
+						</NavLink>
+						<NavLink
+							to="/contact"
+							end
+							className={({ isActive }) =>
+								`
+                relative font-medium transition-all duration-300 ${isActive ? "text-[#38BDF8] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#38BDF8]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
+							}
+						>
+							Contact
+						</NavLink>
 					</nav>
 
 				</div>
