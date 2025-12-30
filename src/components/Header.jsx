@@ -1,7 +1,5 @@
-import React from "react";
 import { useQuery } from "@apollo/client";
 import { NavLink } from "react-router-dom";
-import { GET_MENU } from "../graphql/menu";
 import { GET_SITE_LOGO } from "../graphql/logo";
 
 export default function Header() {
