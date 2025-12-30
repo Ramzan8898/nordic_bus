@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 export default function MainLayout() {
-  return (
-    <div className="min-h-screen bg-[#0B1220] text-[#CBD5E1]">
-      <Header />
-      <main className="max-w-7xl mx-auto px-6 py-8">
-        <Outlet />
-      </main>
-    </div>
-  );
+    return (
+        <div className="min-h-screen bg-[#0B1220] text-[#CBD5E1]">
+            <Header />
+            <main className="container mx-auto">
+                <Outlet />
+            </main>
+        </div>
+    );
 }
