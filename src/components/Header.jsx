@@ -1,51 +1,66 @@
+import React from "react";
 import { useQuery } from "@apollo/client";
+import { NavLink } from "react-router-dom";
 import { GET_MENU } from "../graphql/menu";
-import { Link } from "react-router-dom";
+import { GET_SITE_LOGO } from "../graphql/logo";
 
 export default function Header() {
-  const { data, loading, error } = useQuery(GET_MENU);
 
-  if (loading) return <div>Loading menu...</div>;
-  if (error) return <div>Menu error</div>;
+	const {
+		data: menuData,
+		loading: menuLoading,
+		error: menuError,
+	} = useQuery(GET_MENU);
 
-  return (
-    <header style={styles.header}>
-      <div style={styles.logo}>MySite</div>
+	const {
+		data: logoData,
+		loading: logoLoading,
+		error: logoError,
+	} = useQuery(GET_SITE_LOGO);
 
-      <nav style={styles.nav}>
-        {data.menuItems.nodes.map((item) => (
-          <Link
-            key={item.id}
-            to="/"
-            style={styles.link}
-          >
-            {item.label}
-          </Link>
-        ))}
-      </nav>
-    </header>
-  );
+	if (menuLoading || logoLoading) return <div>Loading...</div>;
+	if (menuError) return <div>Menu error</div>;
+	if (logoError) return <div>Logo error</div>;
+
+	return (
+		<div className="bg-[#201c30]">
+			<header className="w-full bg-[#0B1220] border-b border-[#1E293B]">
+				<div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+					{/* LOGO */}
+					<div className="flex items-center gap-2">
+						{logoData?.mediaItem?.sourceUrl ? (
+							<img
+								src={logoData.mediaItem.sourceUrl}
+								alt={logoData.mediaItem.altText || "Logo"}
+								className="h-17 w-auto"
+							/>
+						) : (
+							<span className="text-white font-bold text-xl">MySite</span>
+						)}
+					</div>
+
+					{/* MENU */}
+					<nav className="flex gap-8">
+						{menuData.menuItems.nodes.map((item) => (
+							<NavLink
+								key={item.id}
+								to={item.uri}
+								end
+								className={({ isActive }) =>
+									`
+                relative font-medium transition-all duration-300 ${isActive ? "text-[#38BDF8] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#38BDF8]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
+								}
+							>
+								{item.label}
+							</NavLink>
+						))}
+					</nav>
+
+				</div>
+			</header>
+		</div>
+	);
 }
 
-const styles = {
-  header: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "16px 24px",
-    borderBottom: "1px solid #eee",
-  },
-  logo: {
-    fontSize: "20px",
-    fontWeight: "bold",
-  },
-  nav: {
-    display: "flex",
-    gap: "20px",
-  },
-  link: {
-    textDecoration: "none",
-    color: "#090278",
-    fontWeight: 500,
-  },
-};
+

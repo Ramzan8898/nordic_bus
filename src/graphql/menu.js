@@ -6,7 +6,7 @@ export const GET_MENU = gql`
             nodes{
                 id
                 label
-                url
+                uri
             }
         }
     }

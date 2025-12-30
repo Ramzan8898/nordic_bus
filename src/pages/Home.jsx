@@ -3,9 +3,8 @@ import Header from '../components/Header';
 
 export default function Home() {
     return (
-        <>
-            <Header />
-            This is the Home Page From Home Page
-        </>
+        <div className="">
+            <h1 className="text-3xl font-bold underline">Welcome to Homepage</h1>
+        </div>
     )
 }
