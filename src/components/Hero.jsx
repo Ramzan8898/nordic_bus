@@ -6,17 +6,19 @@ export default function Hero({ isFullWidth }) {
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error</div>;
 
-    const heroClass = isFullWidth ? "w-full" : "container mx-auto"; 
+    const heroClass = isFullWidth ? "w-full" : "container mx-auto";
 
     return (
-        <div className={`${heroClass} hero-section`}>
+        <div className={`${heroClass} hero-section relative`}>
             <img
                 src={data.pageBy.heroSection.backgroundImage.node.sourceUrl}
                 alt=""
-                className="w-full" 
+                className="object-cover object-center opacity-25 w-full h-175"
             />
-            <h1 className="text-4xl font-bold mb-4">{data.pageBy.heroSection?.primaryHeading}</h1>
-            <p className="text-lg">{data.pageBy.heroSection?.description}</p>
+            <div className="absolute top-0 p-8 md:p-16 lg:p-24 text-center w-full h-full flex flex-col  items-center">
+                <h1 className="text-4xl font-bold mb-4">{data.pageBy.heroSection?.primaryHeading}</h1>
+                <p className="text-lg">{data.pageBy.heroSection?.description}</p>
+            </div>
         </div>
     );
 }
