@@ -1,13 +1,11 @@
 import Hero from '../components/Hero';
+import MainLayout from '../layouts/Layout';
 export default function Home() {
 
     return (
         <>
-            <div className='w-full'>
-                <Hero />
-            </div>
             <div>
-                <h1>mdsbfsgfasld</h1>
+                <h1 className='text-white'>mdsbfsgfasldmdsbfsgfasldmdsbfsgfasldmdsbfsgfasldmdsbfsgfasldmdsbfsgfasld</h1>
             </div>
         </>
     )

@@ -1,8 +1,8 @@
 import { useQuery } from "@apollo/client";
 import { NavLink } from "react-router-dom";
 import { GET_SITE_LOGO } from "../graphql/logo";
-
-export default function Header() {
+export default function Header({ isContainerized }) {
+	const containerClass = isContainerized ? "container mx-auto" : "w-full";
 
 	const {
 		data: logoData,
@@ -16,7 +16,7 @@ export default function Header() {
 	return (
 		<div className="bg-[#201c30]">
 			<header className="w-full bg-[#0B1220] border-b border-[#1E293B]">
-				<div className="container mx-auto flex items-center justify-between px-6 py-4">
+				<div className={`${containerClass} flex items-center justify-between px-6 py-4`}>
 
 					{/* LOGO */}
 					<div className="flex items-center gap-2">
