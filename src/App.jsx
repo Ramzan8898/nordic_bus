@@ -8,7 +8,6 @@ import Services from "./pages/Services";
 export default function App() {
   return (
     <Routes>
-
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

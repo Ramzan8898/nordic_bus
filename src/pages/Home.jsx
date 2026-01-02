@@ -1,5 +1,4 @@
-import Hero from '../components/Hero';
-import MainLayout from '../layouts/Layout';
+
 export default function Home() {
 
     return (
