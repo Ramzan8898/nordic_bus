@@ -1,5 +1,8 @@
 @import "tailwindcss";
-
+:root{
+    --primary:#FF9203;
+    --secondary: #704ef5;
+}
 *{
     font-family: nunito, sans-serif;
 }
