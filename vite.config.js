@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/graphql': {
-        target: 'http://localhost/nordicbus', // WordPress root only
+        target: 'http://localhost/nordicfleet', // WordPress root only
         changeOrigin: true,
         secure: false,
       },

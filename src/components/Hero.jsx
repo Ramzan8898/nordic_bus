@@ -26,6 +26,9 @@ export default function Hero({ isFullWidth }) {
                     </div>
                 </div>
             </div>
+            <div className="flex flex-col">
+                <video src={data.pageBy.heroSection.rightVideo.node.mediaItemUrl} autoPlay loop playsInline />
+            </div>
         </div>
     );
 }

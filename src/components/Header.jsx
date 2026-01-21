@@ -38,7 +38,7 @@ export default function Header({ isContainerized }) {
 							end
 							className={({ isActive }) =>
 								`
-                relative font-medium transition-all duration-300 ${isActive ? "text-[#F5A623] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
+                relative font-medium transition-all duration-300 ${isActive ? "text-[#E3BB45] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
 							}
 						>
 							Home
@@ -48,7 +48,7 @@ export default function Header({ isContainerized }) {
 							end
 							className={({ isActive }) =>
 								`
-                relative font-medium transition-all duration-300 ${isActive ? "text-[#F5A623] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
+                relative font-medium transition-all duration-300 ${isActive ? "text-[#E3BB45] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
 							}
 						>
 							Fleets
@@ -58,7 +58,7 @@ export default function Header({ isContainerized }) {
 							end
 							className={({ isActive }) =>
 								`
-                relative font-medium transition-all duration-300 ${isActive ? "text-[#F5A623] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
+                relative font-medium transition-all duration-300 ${isActive ? "text-[#E3BB45] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#E3BB45]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
 							}
 						>
 							Services
@@ -68,7 +68,7 @@ export default function Header({ isContainerized }) {
 							end
 							className={({ isActive }) =>
 								`
-                relative font-medium transition-all duration-300 ${isActive ? "text-[#F5A623] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
+                relative font-medium transition-all duration-300 ${isActive ? "text-[#E3BB45] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
 							}
 						>
 							About
@@ -78,7 +78,7 @@ export default function Header({ isContainerized }) {
 							end
 							className={({ isActive }) =>
 								`
-                relative font-medium transition-all duration-300 ${isActive ? "text-[#F5A623] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
+                relative font-medium transition-all duration-300 ${isActive ? "text-[#E3BB45] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
 							}
 						>
 							Contact

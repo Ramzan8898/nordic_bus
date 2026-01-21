@@ -12,23 +12,15 @@ query GetHeroSection {
         }
       eyebrowText
       primaryHeading
-      highlightedHeading
       description
-      firstBtn {
-        title
-        url
+rightVideo {
+        node {
+          mediaItemUrl
+          title
+          caption
+          description
+        }
       }
-      secondBtn {
-        title
-        url
-      }
-      rightImage {
-  node {
-    sourceUrl
-    altText
-  }
-}
-
     }
   }
 }
