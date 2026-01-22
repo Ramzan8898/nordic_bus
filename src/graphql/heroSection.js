@@ -13,14 +13,6 @@ query GetHeroSection {
       eyebrowText
       primaryHeading
       description
-rightVideo {
-        node {
-          mediaItemUrl
-          title
-          caption
-          description
-        }
-      }
     }
   }
 }

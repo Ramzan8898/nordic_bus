@@ -6,7 +6,7 @@ export default function MainLayout() {
     const location = useLocation(); // Get current location
 
     return (
-        <div className="min-h-screen bg-[#0B1220] text-[#CBD5E1]">
+        <div className="min-h-screen">
             <Header isContainerized={true} />
 
             {location.pathname === "/" && <Hero isFullWidth={true} />}

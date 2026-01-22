@@ -1,6 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { NavLink } from "react-router-dom";
 import { GET_SITE_LOGO } from "../graphql/logo";
+
 export default function Header({ isContainerized }) {
 	const containerClass = isContainerized ? "container mx-auto" : "w-full";
 
@@ -14,20 +15,19 @@ export default function Header({ isContainerized }) {
 	if (logoError) return <div>Logo error</div>;
 
 	return (
-		<div className="bg-[#201c30]">
-			<header className="w-full bg-[#0B1220] border-b border-[#1E293B]">
+		<div className="bg-transparent">
+			<header className="w-full bg-transparent fixed top-0 left-0 right-0 z-10">
 				<div className={`${containerClass} flex items-center justify-between px-6 py-4`}>
-
 					{/* LOGO */}
 					<div className="flex items-center gap-2">
 						{logoData?.mediaItem?.sourceUrl ? (
 							<img
 								src={logoData.mediaItem.sourceUrl}
 								alt={logoData.mediaItem.altText || "Logo"}
-								className="h-17 w-auto"
+								className="h-24 w-auto"
 							/>
 						) : (
-							<span className="text-white font-bold text-xl">MySite</span>
+							<span className="text-white font-bold text-xl">LOGO</span>
 						)}
 					</div>
 
@@ -37,8 +37,10 @@ export default function Header({ isContainerized }) {
 							to="/"
 							end
 							className={({ isActive }) =>
-								`
-                relative font-medium transition-all duration-300 ${isActive ? "text-[#E3BB45] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
+								`relative font-medium transition-all duration-300 text-[18px] ${isActive
+									? "text-[#E3BB45] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]"
+									: "text-[#ffffff] hover:text-[#CBD5E1]"
+								}`
 							}
 						>
 							Home
@@ -47,8 +49,10 @@ export default function Header({ isContainerized }) {
 							to="/fleets"
 							end
 							className={({ isActive }) =>
-								`
-                relative font-medium transition-all duration-300 ${isActive ? "text-[#E3BB45] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
+								`relative font-medium transition-all duration-300 text-[18px] ${isActive
+									? "text-[#E3BB45] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]"
+									: "text-[#ffffff] hover:text-[#CBD5E1]"
+								}`
 							}
 						>
 							Fleets
@@ -57,8 +61,10 @@ export default function Header({ isContainerized }) {
 							to="/services"
 							end
 							className={({ isActive }) =>
-								`
-                relative font-medium transition-all duration-300 ${isActive ? "text-[#E3BB45] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#E3BB45]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
+								`relative font-medium transition-all duration-300 text-[18px] ${isActive
+									? "text-[#E3BB45] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#E3BB45]"
+									: "text-[#ffffff] hover:text-[#CBD5E1]"
+								}`
 							}
 						>
 							Services
@@ -67,8 +73,10 @@ export default function Header({ isContainerized }) {
 							to="/about"
 							end
 							className={({ isActive }) =>
-								`
-                relative font-medium transition-all duration-300 ${isActive ? "text-[#E3BB45] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
+								`relative font-medium transition-all duration-300 text-[18px] ${isActive
+									? "text-[#E3BB45] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]"
+									: "text-[#ffffff] hover:text-[#CBD5E1]"
+								}`
 							}
 						>
 							About
@@ -77,18 +85,17 @@ export default function Header({ isContainerized }) {
 							to="/contact"
 							end
 							className={({ isActive }) =>
-								`
-                relative font-medium transition-all duration-300 ${isActive ? "text-[#E3BB45] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]" : "text-[#ffffff] hover:text-[#CBD5E1]"}`
+								`relative font-medium transition-all duration-300 text-[18px] ${isActive
+									? "text-[#E3BB45] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#F5A623]"
+									: "text-[#ffffff] hover:text-[#CBD5E1]"
+								}`
 							}
 						>
 							Contact
 						</NavLink>
 					</nav>
-
 				</div>
 			</header>
 		</div>
 	);
 }
-
-
