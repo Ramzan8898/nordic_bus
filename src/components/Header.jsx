@@ -15,16 +15,16 @@ export default function Header({ isContainerized }) {
 	if (logoError) return <div>Logo error</div>;
 
 	return (
-		<div className="bg-transparent">
-			<header className="w-full bg-transparent fixed top-0 left-0 right-0 z-10">
-				<div className={`${containerClass} flex items-center justify-between px-6 py-4`}>
+		<div className="bg-[#0B1220]">
+			<header className="w-full bg-[#0B1220] fixed top-0 left-0 right-0 z-10 py-3">
+				<div className={`${containerClass} flex items-center justify-between`}>
 					{/* LOGO */}
 					<div className="flex items-center gap-2">
 						{logoData?.mediaItem?.sourceUrl ? (
 							<img
 								src={logoData.mediaItem.sourceUrl}
 								alt={logoData.mediaItem.altText || "Logo"}
-								className="h-24 w-auto"
+								className="h-20 w-auto"
 							/>
 						) : (
 							<span className="text-white font-bold text-xl">LOGO</span>

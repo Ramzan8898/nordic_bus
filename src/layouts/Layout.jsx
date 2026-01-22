@@ -11,7 +11,7 @@ export default function MainLayout() {
 
             {location.pathname === "/" && <Hero isFullWidth={true} />}
 
-            <main className="container mx-auto">
+            <main className="">
                 <Outlet />
             </main>
         </div>

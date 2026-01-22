@@ -1,11 +1,12 @@
+import Reputation from "../components/Reputation";
+import WhyChooseUs from "../components/WhyChooseUs";
 
 export default function Home() {
 
     return (
         <>
-            <div>
-                <h1 className='text-white'>mdsbfsgfasldmdsbfsgfasldmdsbfsgfasldmdsbfsgfasldmdsbfsgfasldmdsbfsgfasld</h1>
-            </div>
+            <Reputation />
+            <WhyChooseUs />
         </>
     )
 }

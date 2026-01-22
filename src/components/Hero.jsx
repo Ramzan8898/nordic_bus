@@ -12,7 +12,7 @@ export default function Hero({ isFullWidth }) {
     return (
         <div className={`${heroClass} hero-section relative z-0 `}>
             <img src={data.pageBy.heroSection.backgroundImage.node.sourceUrl} alt="Hero Image" className="object-cover w-full h-200" />
-            <div className="absolute top-30 left-33 p-8 md:p-16 lg:p-24">
+            <div className="absolute top-30 left-25 p-8 md:p-16 lg:p-24">
                 <div className="flex items-left flex-col gap-3">
                     <h3 className="text-(--primary) font-bold uppercase text-[24px] ">{data.pageBy.heroSection?.eyebrowText}</h3>
                     <h1 className="font-bold text-[72px] leading-15 text-[#dad6d6]">{data.pageBy.heroSection?.primaryHeading}</h1>
