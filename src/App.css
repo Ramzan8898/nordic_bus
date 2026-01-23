@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 @plugin 'lightswind/plugin';
 :root {
-    --primary: #E3BB45;
+    --primary: #d1ac3f;
     --secondary: #704ef5;
 }
 
