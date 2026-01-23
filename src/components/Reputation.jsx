@@ -6,6 +6,7 @@ export default function Reputation() {
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
                 <div className="w-full h-auto rounded-lg overflow-hidden">
                     {/* <video src="./src/assets/Reputation_video.mp4" autoPlay playsInline muted loop className="h-100 w-full" /> */}
+                    {/* <img src="./src/assets/Reputation.jpg" alt="" className="w-full h-150 object-cover object-bottom rounded-lg" /> */}
                     <img src="./src/assets/Reputation.jpg" alt="" className="w-full h-150 object-cover object-bottom rounded-lg" />
                 </div>
                 <div className="flex flex-col gap-2 mt-3">
