@@ -46,7 +46,7 @@ export default function Header({ isContainerized }) {
 							Home
 						</NavLink>
 						<NavLink
-							to="/fleets"
+							to="/fleet"
 							end
 							className={({ isActive }) =>
 								`relative font-medium transition-all duration-300 text-[18px] ${isActive
@@ -55,7 +55,7 @@ export default function Header({ isContainerized }) {
 								}`
 							}
 						>
-							Fleets
+							Fleet
 						</NavLink>
 						<NavLink
 							to="/services"

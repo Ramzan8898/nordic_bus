@@ -4,7 +4,7 @@ import Fleet from "../components/Fleet";
 export default function Fleets() {
     return (
         <>
-            <div className="bg-black text-white min-h-screen px-10 py-40">
+            <div className="bg-black text-white min-h-screen">
                 <div className="container mx-auto">
                     <Fleet showViewAll={false} showLoadMore={true} />
                 </div>
