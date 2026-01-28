@@ -1,3 +1,4 @@
+import Brands from "../components/Brands";
 import Fleet from "../components/Fleet";
 import Reputation from "../components/Reputation";
 import WhyChooseUs from "../components/WhyChooseUs";
@@ -9,6 +10,7 @@ export default function Home() {
             <Reputation />
             <WhyChooseUs />
             <Fleet />
+            <Brands />
         </>
     )
 }
