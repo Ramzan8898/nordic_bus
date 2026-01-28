@@ -1,10 +1,12 @@
 import { useQuery } from "@apollo/client";
 import { GET_HERO_SECTION } from "../graphql/heroSection";
 import { Link } from "react-router-dom";
-
+import HeroShimmer from "./skelton/HeroShimmer";
 export default function Hero({ isFullWidth }) {
     const { data, loading, error } = useQuery(GET_HERO_SECTION);
-    if (loading) return <div>Loading...</div>;
+    if (loading) {
+        return <HeroShimmer isFullWidth={isFullWidth} />;
+    }
     if (error) return <div>Error</div>;
 
     const heroClass = isFullWidth ? "w-full" : "container mx-auto";

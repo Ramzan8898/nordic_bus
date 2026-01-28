@@ -3,8 +3,12 @@ import CountUp from 'react-countup';
 import { use } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_REPUTATION_SECTION } from "../graphql/Reputation";
+import ReputationShimmer from "./skelton/ReputationShimmer";
 export default function Reputation() {
-    const { data } = useQuery(GET_REPUTATION_SECTION);
+    const { data, loading } = useQuery(GET_REPUTATION_SECTION);
+    if (loading) {
+        return <ReputationShimmer />;
+    }
     return (
         <div className="py-25 bg-[#0a0a0a]">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">

@@ -1,8 +1,12 @@
 import { useQuery } from "@apollo/client"
 import { GET_WHY_CHOOSE_US_SECTION } from "../graphql/whyChooseUs"
+import WhyChooseUsShimmer from "./skelton/WhyChooseUsShimmer";
 
 export default function WhyChooseUs() {
-    const { data } = useQuery(GET_WHY_CHOOSE_US_SECTION);
+    const { data, loading } = useQuery(GET_WHY_CHOOSE_US_SECTION);
+    if (loading) {
+        return <WhyChooseUsShimmer />
+    }
     return (
         <div className="bg-[#100f0f] py-25">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start px-4">

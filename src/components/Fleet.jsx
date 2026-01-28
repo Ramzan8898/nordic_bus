@@ -2,20 +2,24 @@ import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { GET_FLEET_SECTION } from "../graphql/fleet";
+import FleetShimmer from "./skelton/FleetShimmer";
 
 export default function Fleet({ showViewAll = true, showLoadMore = false }) {
-    const { data } = useQuery(GET_FLEET_SECTION);
+    const { data, loading } = useQuery(GET_FLEET_SECTION);
 
     const fleets = data?.pageBy?.fleet?.fleets || [];
-
+    
     const [visibleCount, setVisibleCount] = useState(6);
-
+    
     const visibleFleets = fleets.slice(0, visibleCount);
-
+    
     const handleLoadMore = () => {
         setVisibleCount(prev => prev + 6);
     };
-
+    
+    if (loading) {
+        return <FleetShimmer count={6} />;
+    }
     return (
         <div className="py-25 bg-black">
             <div className="container mx-auto">
