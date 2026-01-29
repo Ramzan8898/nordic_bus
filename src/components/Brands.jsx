@@ -1,10 +1,13 @@
 import { useQuery } from "@apollo/client";
 import { GET_BRANDS } from "../graphql/brands";
+import BrandsShimmer from "./skelton/BrandsShimmer";
 
 export default function Brands() {
     const { data, loading, error } = useQuery(GET_BRANDS);
 
-    if (loading) return null;
+    if (loading) {
+        return <BrandsShimmer/>;
+    }
     if (error) return null;
 
     const brands = data?.pageBy?.brands;
@@ -31,7 +34,7 @@ export default function Brands() {
                                 <img
                                     src={item?.logo?.node?.sourceUrl}
                                     alt="Brand logo"
-                                    className="h-20 w-full object-contain grayscale hover:grayscale-0 transition duration-300"
+                                    className="h-20 w-full object-contain grayscale hover:grayscale-0 transition duration-300 hover:cursor-pointer"
                                 />
                             </div>
                         ))}
