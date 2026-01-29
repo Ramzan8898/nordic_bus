@@ -1,8 +1,8 @@
 import { useQuery } from "@apollo/client";
 import BookingShimmer from "./skelton/BookingShimmer";
 import { GET_WP_FORM_FIELDS } from "../graphql/wpFormFields";
-const FORM_ID = 170; // <-- WPForms Form ID
-const SITE_URL = "http://localhost/nordicfleet"; // <-- Your WordPress site URL
+const FORM_ID = 170;
+const SITE_URL = "http://localhost/nordicfleet";
 import { useState } from "react";
 
 export default function Booking() {
@@ -80,25 +80,16 @@ export default function Booking() {
                     ))}
                 </div>
 
-                {/* SUBMIT */}
                 <button
                     onClick={submitForm}
                     disabled={submitting}
-                    className="
-          w-full mt-10 py-4
-          rounded-full
-          bg-yellow-400 text-black font-semibold
-          transition-all duration-300
-          hover:scale-[0.97]
-          disabled:opacity-50
-        "
-                >
+                    className="w-full mt-10 py-4 rounded-full bg-yellow-400 text-black font-semibold transition-all duration-300 hover:scale-[0.97] disabled:opacity-50">
                     {submitting ? "Submitting..." : "Ask Availability"}
                 </button>
 
                 {success && (
                     <p className="text-green-400 text-center mt-4">
-                        ✅ Form submitted successfully
+                        Form submitted successfully
                     </p>
                 )}
             </div>
@@ -106,10 +97,6 @@ export default function Booking() {
     );
 
 }
-
-/* =========================
-   HELPERS
-========================= */
 function mapInputType(type) {
     switch (type) {
         case "email":
