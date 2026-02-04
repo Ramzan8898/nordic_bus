@@ -1,4 +1,3 @@
-import Booking from "../components/Booking";
 import Brands from "../components/Brands";
 import Fleet from "../components/Fleet";
 import Reputation from "../components/Reputation";
@@ -12,7 +11,6 @@ export default function Home() {
             <WhyChooseUs />
             <Fleet />
             <Brands />
-            <Booking />
         </>
     )
 }

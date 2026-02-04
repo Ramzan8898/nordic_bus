@@ -8,17 +8,14 @@ export default function Breadcrumbs() {
 
     return (
         <div
-            className="relative w-full h-130 py-25 bg-cover bg-center"
+            className="relative w-full h-100 py-25 bg-cover bg-center"
             style={{ backgroundImage: "url('/src/assets/breadcrumb.jpg')", backgroundRepeat: 'no-repeat', backgroundSize: 'cover', zoom: '-1' }}
         >
-            {/* DARK OVERLAY */}
             <div className="absolute inset-0 bg-black/70"></div>
 
-            {/* CONTENT */}
             <div className="relative z-10 container mx-auto flex justify-center items-center h-full">
                 <nav className="inline-flex items-center gap-5 rounded-full  backdrop-blur-md border border-white/10 px-6 py-3 text-sm text-gray-400 shadow-[0_8px_30px_rgba(0,0,0,0.6)]">
 
-                    {/* Home */}
                     <Link
                         to="/"
                         className="flex items-center  gap-1 text-white transition text-lg"
