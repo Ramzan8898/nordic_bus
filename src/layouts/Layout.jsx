@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Breadcrumb from "../components/Breadcrumb";
+import Footer from "../components/Footer";
 
 export default function MainLayout() {
     const location = useLocation();
@@ -18,6 +19,7 @@ export default function MainLayout() {
 
                 <Outlet />
             </main>
+            <Footer />
         </div>
     );
 }
